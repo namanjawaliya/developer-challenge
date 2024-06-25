@@ -17,3 +17,4 @@ const GET = async () => {
 };
 
 export { GET };
+export const dynamic = "force-dynamic";
