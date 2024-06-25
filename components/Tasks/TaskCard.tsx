@@ -44,6 +44,7 @@ const TaskCard: React.FC<Task> = ({
     <Card
       className={`${isExpired && "opacity-60"}`}
       onClick={() => setIsOpen((prev) => !prev)}
+      key={_id}
     >
       <CardHeader>
         <CardTitle>{title}</CardTitle>
@@ -72,7 +73,7 @@ const TaskCard: React.FC<Task> = ({
           </SelectTrigger>
           <SelectContent>
             {Status.map((status) => (
-              <SelectItem value={status} className="capitalize">
+              <SelectItem value={status} className="capitalize" key={status}>
                 {status}
               </SelectItem>
             ))}

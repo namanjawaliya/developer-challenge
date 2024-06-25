@@ -26,9 +26,9 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CalendarIcon } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
-import { TaskAddModal } from "@/types/TaskAddModal";
+import { TaskAddModal as TaskAddModalType } from "@/types/TaskAddModal";
 
-const TaskAddModal: React.FC<TaskAddModal> = ({
+const TaskAddModal: React.FC<TaskAddModalType> = ({
   isOpen,
   handleClose,
   getTasks,

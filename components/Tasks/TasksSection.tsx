@@ -1,10 +1,10 @@
-import { TasksSection } from "@/types/TasksSection";
+import { TasksSection as TaskSectionType } from "@/types/TasksSection";
 import React from "react";
 import TaskCard from "@/components/Tasks/TaskCard";
-import { Task } from "@/types/Task";
+import { Task as TaskType } from "@/types/Task";
 import { GhostIcon } from "lucide-react";
 
-const TasksSection: React.FC<TasksSection> = ({
+const TasksSection: React.FC<TaskSectionType> = ({
   id,
   title,
   tasks,
@@ -18,8 +18,12 @@ const TasksSection: React.FC<TasksSection> = ({
         <div className="flex flex-col gap-4">
           {tasks
             .sort((a, b) => a.dueDate - b.dueDate)
-            .map((task: Task) => (
-              <TaskCard {...task} handleStatusChange={handleStatusChange} />
+            .map((task: TaskType) => (
+              <TaskCard
+                {...task}
+                handleStatusChange={handleStatusChange}
+                key={task._id}
+              />
             ))}
         </div>
       ) : (

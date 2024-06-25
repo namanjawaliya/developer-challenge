@@ -41,8 +41,7 @@ const page = () => {
           status: updatedStatus,
         }),
       });
-      const { tasks } = await getTasks();
-      setTaskList(tasks);
+      await getTasks();
     } catch (error) {
       console.error({ error });
     }
