@@ -36,6 +36,7 @@ const page = () => {
     try {
       const response = await fetch("/api/tasks/update-task-status", {
         method: "POST",
+        next: { revalidate: 5 },
         body: JSON.stringify({
           taskId: id,
           status: updatedStatus,
